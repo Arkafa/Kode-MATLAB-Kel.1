@@ -1,0 +1,7 @@
+% Fungsi distribusi noise power
+noise = @(x, y) 1e-9 * (x.^2 + y.^2 + 1);
+
+% Integrasi 2D di atas permukaan 5x5 cm
+noise_power = integral2(noise, 0, 0.05, 0, 0.05);
+
+disp(['Total noise power: ', num2str(noise_power), ' W']);
