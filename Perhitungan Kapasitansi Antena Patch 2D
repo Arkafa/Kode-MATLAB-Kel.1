@@ -1,0 +1,7 @@
+% Fungsi distribusi muatan
+charge_density = @(x, y) 1e-6 * cos(pi*x) .* cos(pi*y);
+
+% Luas patch antena 1x1 cm
+C_patch = integral2(charge_density, 0, 0.01, 0, 0.01);
+
+disp(['Kapasitansi patch antena (tak langsung): ', num2str(C_patch), ' C']);
