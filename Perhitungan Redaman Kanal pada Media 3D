@@ -1,0 +1,9 @@
+//Perhitungan Redaman Kanal pada Media 3D(Jangan dicopas jg jdul nya)
+
+% Fungsi redaman berdasarkan posisi (x, y, z)
+attenuation = @(x, y, z) exp(-0.01 * sqrt(x.^2 + y.^2 + z.^2));
+
+% Volume integrasi (contoh: 0 sampai 10 meter di ketiga sumbu)
+P_loss = integral3(attenuation, 0, 10, 0, 10, 0, 10);
+
+disp(['Total redaman sinyal dalam media: ', num2str(P_loss)]);
