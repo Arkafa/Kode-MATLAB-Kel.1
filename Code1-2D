@@ -1,0 +1,12 @@
+% Distribusi intensitas pancaran antena
+f = @(theta, phi) sin(theta).^2;
+
+% Batas integrasi
+theta_min = 0; theta_max = pi;
+phi_min = 0; phi_max = 2*pi;
+
+% Integral lipat dua dalam koordinat bola
+P_total = integral2(@(theta, phi) f(theta, phi).*sin(theta), ...
+                    theta_min, theta_max, phi_min, phi_max);
+
+disp(['Total daya pancaran antena: ', num2str(P_total), ' unit']);
