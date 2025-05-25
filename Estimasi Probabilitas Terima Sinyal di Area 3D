@@ -1,0 +1,7 @@
+% Probabilitas distribusi Gaussian 3D
+P_recv = @(x, y, z) exp(-(x.^2 + y.^2 + z.^2));
+
+% Volume integrasi dari -1 ke 1 (unit tertentu)
+probability = integral3(P_recv, -1, 1, -1, 1, -1, 1);
+
+disp(['Probabilitas total penerimaan sinyal: ', num2str(probability)]);
